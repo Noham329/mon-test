@@ -1,0 +1,359 @@
+<html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier Coiffure | Votre Salon à Paris</title>
+    <style>
+        /* --- RESET & BASES --- */
+        * {
+            margin: 0;
+            pastdding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- TYPOGRAPHIE --- */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            /* Police élégante pour les titres */
+            color: #2c2c2c;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #d4a373;
+            /* Couleur Or/Bronze */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4a373;
+        }
+
+        .btn-rdv {
+            background-color: #d4a373;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .btn-rdv:hover {
+            background-color: #b08d62;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- SERVICES --- */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #d4a373;
+        }
+
+        .price-list {
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+
+        /* --- ABOUT --- */
+        .about {
+            background-color: #f0ebe6;
+            /* Beige très clair */
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER / CONTACT --- */
+        footer {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 3rem 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: #d4a373;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">L'ATELIER</div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Prestations</a></li>
+                <li><a href="#about">Le Salon</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn-rdv">Prendre RDV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Révélez votre beauté naturelle</h1>
+            <p>Coiffure, Coloration & Soins experts au cœur de la ville.</p>
+            <a href="#contact" class="btn-rdv" style="font-size: 1.2rem; padding: 15px 30px;">Réserver maintenant</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Nos Prestations</h2>
+        <div class="container">
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">💇‍♀️</div>
+                    <h3>Coiffure Femme</h3>
+                    <p>Des coupes modernes adaptées à la forme de votre visage.</p>
+                    <div class="price-list">
+                        <div class="price-item"><span>Shampoing + Brushing</span> <span>25€</span></div>
+                        <div class="price-item"><span>Coupe + Brushing</span> <span>45€</span></div>
+                        <div class="price-item"><span>Coupe Transformation</span> <span>55€</span></div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Coloration & Balayage</h3>
+                    <p>Nuances subtiles ou changements radicaux avec des produits de qualité.</p>
+                    <div class="price-list">
+                        <div class="price-item"><span>Coloration Racine</span> <span>35€</span></div>
+                        <div class="price-item"><span>Balayage / Ombré</span> <span>dès 65€</span></div>
+                        <div class="price-item"><span>Soin Gloss</span> <span>20€</span></div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💇‍♂️</div>
+                    <h3>Coiffure Homme</h3>
+                    <p>Coupes ciseaux ou tondeuse et entretien de la barbe.</p>
+                    <div class="price-list">
+                        <div class="price-item"><span>Coupe Classique</span> <span>22€</span></div>
+                        <div class="price-item"><span>Coupe + Barbe</span> <span>30€</span></div>
+                        <div class="price-item"><span>Taille de Barbe</span> <span>10€</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">L'Esprit du Salon</h2>
+            <p>
+                Depuis 2015, L'Atelier vous accueille dans un cadre chaleureux et relaxant.
+                Notre équipe de coiffeurs visagistes passionnés utilise exclusivement des produits
+                respectueux de vos cheveux et de l'environnement. Venez vivre un moment de détente absolue.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+
+            <div class="footer-col">
+                <h3>Nous trouver</h3>
+                <p>12 Rue de la République</p>
+                <p>75001 Paris</p>
+                <br>
+                <p><strong>Tél :</strong> 01 23 45 67 89</p>
+                <p><strong>Email :</strong> contact@latelier-coiffure.fr</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Horaires d'ouverture</h3>
+                <ul>
+                    <li>Lundi : Fermé</li>
+                    <li>Mardi - Vendredi : 09h00 - 19h00</li>
+                    <li>Samedi : 09h00 - 18h00</li>
+                    <li>Dimanche : Fermé</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+                <br>
+                <p style="font-size: 0.9rem; color: #aaa;">Parking gratuit à proximité.</p>
+            </div>
+
+        </div>
+        <div class="copyright">
+            &copy; 2023 L'Atelier Coiffure. Tous droits réservés.
+        </div>
+    </footer>
+
+</body>
+
+</html>
